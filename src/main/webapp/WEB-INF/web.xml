@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>EMS</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>EMSLogin.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<listener>
+		<listener-class>com.service.ServerListener</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>1440</session-timeout> <!-- Set session timeout to 1440 minutes -->
+	</session-config>
+
+	<servlet>
+		<servlet-name>EMSLoginServlet</servlet-name>
+		<servlet-class>com.controller.EMSLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSLoginServlet</servlet-name>
+		<url-pattern>/EMSLoginServlet</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>EMSLoginFilter</filter-name>
+		<filter-class>com.Filter.EMSLoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EMSLoginFilter</filter-name>
+		<url-pattern>/EMSLoginServlet</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>ClientServlet</servlet-name>
+		<servlet-class>com.controller.ClientServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClientServlet</servlet-name>
+		<url-pattern>/ClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSItemServlet</servlet-name>
+		<servlet-class>com.controller.EMSItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EMSItemServlet</servlet-name>
+		<url-pattern>/EMSItemServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ProjectServlet</servlet-name>
+		<servlet-class>com.controller.ProjectServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProjectServlet</servlet-name>
+		<url-pattern>/ProjectServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSQuotationPerItemServlet</servlet-name>
+		<servlet-class>com.controller.EMSQuotationPerItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EMSQuotationPerItemServlet</servlet-name>
+		<url-pattern>/EMSQuotationPerItemServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSDirectorsDashboardServlet</servlet-name>
+		<servlet-class>com.controller.EMSDirectorsDashboardServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EMSDirectorsDashboardServlet</servlet-name>
+		<url-pattern>/EMSDirectorsDashboardServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSFinalQuotationServlet</servlet-name>
+		<servlet-class>com.controller.EMSFinalQuotationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSFinalQuotationServlet</servlet-name>
+		<url-pattern>/EMSFinalQuotationServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSPurchaseServlet</servlet-name>
+		<servlet-class>com.controller.EMSPurchaseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSPurchaseServlet</servlet-name>
+		<url-pattern>/EMSPurchaseServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EMSStoreServlet</servlet-name>
+		<servlet-class>com.controller.EMSStoreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSStoreServlet</servlet-name>
+		<url-pattern>/EMSStoreServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ShowManagementAccess</servlet-name>
+		<servlet-class>com.controller.ShowManagementAccess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowManagementAccess</servlet-name>
+		<url-pattern>/ShowManagementAccess</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccessManagementServlet</servlet-name>
+		<servlet-class>com.controller.AccessManagementServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccessManagementServlet</servlet-name>
+		<url-pattern>/AccessManagementServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>EMSProductionServlet</servlet-name>
+		<servlet-class>com.controller.EMSProductionServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSProductionServlet</servlet-name>
+		<url-pattern>/EMSProductionServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetGradeListServlet</servlet-name>
+		<servlet-class>com.controller.GetGradeListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetGradeListServlet</servlet-name>
+		<url-pattern>/GetGradeListServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EMSStoreListServlet</servlet-name>
+		<servlet-class>com.controller.EMSStoreListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSStoreListServlet</servlet-name>
+		<url-pattern>/EMSStoreListServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>IndentServlet</servlet-name>
+		<servlet-class>com.controller.IndentServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>IndentServlet</servlet-name>
+		<url-pattern>/IndentServlet</url-pattern>
+	</servlet-mapping>
+		
+	
+	<servlet>
+		<servlet-name>ListIndentServlet</servlet-name>
+		<servlet-class>com.controller.ListIndentServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ListIndentServlet</servlet-name>
+		<url-pattern>/ListIndentServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EMSGRNServlet</servlet-name>
+		<servlet-class>com.controller.EMSGRNServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSGRNServlet</servlet-name>
+		<url-pattern>/EMSGRNServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EMSClientListServlet</servlet-name>
+		<servlet-class>com.controller.EMSClientListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSClientListServlet</servlet-name>
+		<url-pattern>/EMSClientListServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EMSOffersServlet</servlet-name>
+		<servlet-class>com.controller.EMSOffersServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSOffersServlet</servlet-name>
+		<url-pattern>/EMSOffersServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QuotationPerItemListServlet</servlet-name>
+		<servlet-class>com.controller.QuotationPerItemListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>QuotationPerItemListServlet</servlet-name>
+		<url-pattern>/QuotationPerItemListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSPurchaseListServlet</servlet-name>
+		<servlet-class>com.controller.EMSPurchaseListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSPurchaseListServlet</servlet-name>
+		<url-pattern>/EMSPurchaseListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSFinalQuotationListServlet</servlet-name>
+		<servlet-class>com.controller.EMSFinalQuotationListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSFinalQuotationListServlet</servlet-name>
+		<url-pattern>/EMSFinalQuotationListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSItemListServlet</servlet-name>
+		<servlet-class>com.controller.EMSItemListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSItemListServlet</servlet-name>
+		<url-pattern>/EMSItemListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSIssueNoteServlet</servlet-name>
+		<servlet-class>com.controller.EMSIssueNoteServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSIssueNoteServlet</servlet-name>
+		<url-pattern>/EMSIssueNoteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSIssueNoteListServlet</servlet-name>
+		<servlet-class>com.controller.EMSIssueNoteListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSIssueNoteListServlet</servlet-name>
+		<url-pattern>/EMSIssueNoteListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSDrawingServlet</servlet-name>
+		<servlet-class>com.controller.EMSDrawingServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSDrawingServlet</servlet-name>
+		<url-pattern>/EMSDrawingServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSVendorsServlet</servlet-name>
+		<servlet-class>com.controller.EMSVendorsServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSVendorsServlet</servlet-name>
+		<url-pattern>/EMSVendorsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSUsersSevlet</servlet-name>
+		<servlet-class>com.controller.EMSUsersSevlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSUsersSevlet</servlet-name>
+		<url-pattern>/EMSUsersSevlet</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>EMSUserFilter</filter-name>
+		<filter-class>com.Filter.EMSUserFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>EMSUserFilter</filter-name>
+		<url-pattern>/EMSUsersSevlet</url-pattern>
+	</filter-mapping> 
+	<servlet>
+		<servlet-name>GeneralListServlet</servlet-name>
+		<servlet-class>com.controller.GeneralListServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GeneralListServlet</servlet-name>
+		<url-pattern>/GeneralListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PrintPo</servlet-name>
+		<servlet-class>com.controller.PrintPo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PrintPo</servlet-name>
+		<url-pattern>/PrintPo</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSSendMailWithAttechedFileServlet</servlet-name>
+		<servlet-class>com.controller.EMSSendMailWithAttechedFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSSendMailWithAttechedFileServlet</servlet-name>
+		<url-pattern>/EMSSendMailWithAttechedFileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSGRNApprovalPending</servlet-name>
+		<servlet-class>com.controller.EMSGRNApprovalPending</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSGRNApprovalPending</servlet-name>
+		<url-pattern>/EMSGRNApprovalPending</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSGetpassinwordServlet</servlet-name>
+		<servlet-class>com.controller.EMSGetpassinwordServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSGetpassinwordServlet</servlet-name>
+		<url-pattern>/EMSGetpassinwordServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSGetpassOutwordServlet</servlet-name>
+		<servlet-class>com.controller.EMSGetpassOutwordServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSGetpassOutwordServlet</servlet-name>
+		<url-pattern>/EMSGetpassOutwordServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSGetpassListServlet</servlet-name>
+		<servlet-class>com.controller.EMSGetpassListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSGetpassListServlet</servlet-name>
+		<url-pattern>/EMSGetpassListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSAddMachineServlet</servlet-name>
+		<servlet-class>com.controller.EMSAddMachineServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSAddMachineServlet</servlet-name>
+		<url-pattern>/EMSAddMachineServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSAddMachineListServlet</servlet-name>
+		<servlet-class>com.controller.EMSAddMachineListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSAddMachineListServlet</servlet-name>
+		<url-pattern>/EMSAddMachineListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSAddMachineInMntServlet</servlet-name>
+		<servlet-class>com.controller.EMSAddMachineInMntServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EMSAddMachineInMntServlet</servlet-name>
+		<url-pattern>/EMSAddMachineInMntServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EMSPerMachineMntServlet</servlet-name>
+		<servlet-class>com.controller.EMSPerMachineMntServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSPerMachineMntServlet</servlet-name>
+		<url-pattern>/EMSPerMachineMntServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EMSReceiveMachineFromMnt</servlet-name>
+		<servlet-class>com.controller.EMSReceiveMachineFromMntServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EMSReceiveMachineFromMnt</servlet-name>
+		<url-pattern>/EMSReceiveMachineFromMnt</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>com.controller.DownloadServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/DownloadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ProductionPhaseServlet</servlet-name>
+		<servlet-class>com.controller.ProductionPhaseServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ProductionPhaseServlet</servlet-name>
+		<url-pattern>/ProductionPhaseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ProjectInLossServlet</servlet-name>
+		<servlet-class>com.controller.ProjectInLossServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ProjectInLossServlet</servlet-name>
+		<url-pattern>/ProjectInLossServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DailyProgressReportServlet</servlet-name>
+		<servlet-class>com.controller.DailyProgressReportServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DailyProgressReportServlet</servlet-name>
+		<url-pattern>/DailyProgressReportServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
